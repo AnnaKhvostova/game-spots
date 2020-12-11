@@ -5,12 +5,17 @@ body {
 }
 .wrapper {
     margin: 3% 10%;
+    flex-direction: column;
 }
 #container {
+    margin: auto;
     box-sizing: border-box;
+}
+.game-container {
     display: flex;
     flex-direction: column;
     max-width: fit-content;
+    max-width: -moz-fit-content;
 }
 #startPlay {
     margin-top: 10%;
@@ -23,7 +28,7 @@ body {
     border: 5px solid rgb(60, 58, 58);
     border-radius: 0.3rem;
 }
-#startPlay:hover {
+button:hover {
     transform: scale(1.2);
     /* transition: ease 1sec; */
 }
@@ -34,28 +39,42 @@ body {
 }
 .cell-hard {
     border: 2px solid grey;
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
 }
 .cell-normal {
     border: 2px solid grey;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
 }
 .cell-easy {
     border: 3px solid grey;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
 }
 #btnStart {
+    margin: 1rem;
     color: rgb(33, 33, 33);
-    padding: 0.5rem;
+    padding: 0.8rem;
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: bold;
     background-color: crimson;
     border: 4px solid rgb(60, 58, 58);
     border-radius: 0.4rem;
+    order: 5;
+}
+#btnRestart {
+    color: rgb(33, 33, 33);
+    padding: 0.8rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: rgb(53, 233, 155);
+    border: 4px solid rgb(60, 58, 58);
+    border-radius: 0.4rem;
+    margin: 1rem;
+    order: 6;
 }
 .red {
     background: rgb(187, 12, 12);
@@ -67,31 +86,38 @@ body {
     background: rgb(4, 170, 4);
 }
 #computerPoints {
-    margin-left: 1rem;
     color: rgb(187, 12, 12);
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 #gamerPoints {
-    margin-left: 3.5rem;
     color: rgb(4, 170, 4);
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 
 .points-display {
     margin: 0.8rem 0;
     border: 4px solid rgb(60, 58, 58);
-    padding: 1rem;
+    padding: 1rem 7rem;
     /* max-width: fit-content; */
-    font-size: 1.2rem;
-    font-weight: bold;
     color: rgb(33, 33, 33);
     background-color: rgb(230, 212, 182);
 }
+.points-display-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
 .levels {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    background-color: rgb(230, 212, 182);
+    border: 4px solid rgb(60, 58, 58);
+    padding: 2rem;
 }
-#easy {
+#btnEasy {
+    width: 150px;
     padding: 0.5rem 1rem;
     border: 2px solid rgb(60, 58, 58);
     text-transform: uppercase;
@@ -99,8 +125,10 @@ body {
     font-weight: bold;
     background-color: rgb(4, 170, 4);
     border-radius: 0.4rem;
+    margin-left: 1rem;
 }
-#normal {
+#btnNormal {
+    width: 150px;
     padding: 0.5rem;
     border: 2px solid rgb(60, 58, 58);
     text-transform: uppercase;
@@ -108,9 +136,10 @@ body {
     font-weight: bold;
     background: rgb(82, 82, 226);
     border-radius: 0.4rem;
-    margin: 0 1rem;
+    margin: 0 1.4rem;
 }
-#hard {
+#btnHard {
+    width: 150px;
     padding: 0.5rem;
     border: 2px solid rgb(60, 58, 58);
     text-transform: uppercase;

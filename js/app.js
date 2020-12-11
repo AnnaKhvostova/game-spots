@@ -1,41 +1,7 @@
 
 'use strict';
 const fieldContainer = document.getElementById('container');
-const start = document.getElementById('startPlay');
-start.addEventListener('click', function a() {
-    const self = this;
-    startGame(generalParams, LevelsValues, self)
-});// const btnStart = document.getElementById('btnStart');
 
-// const btnEasyLevel = document.getElementById('easy');
-// const btnNormalLevel = document.getElementById('normal');
-// const btnHardLevel = document.getElementById('hard');
-
-// const levels = document.getElementById('levels');
-// const points = document.querySelector('.points');
-// const gamerPoints = document.getElementById('gamerPoints');
-// const computerPoints = document.getElementById('computerPoints');
-// ---------------------------------------------------------------------------------------
-// const table;
-// table.createTable('row', 'cell');
-const generalParams = {
-
-    tableClass: 'table',
-    btnStartID: 'btnStart',
-    pointsDisplay: {
-        containerClass: 'points-display',
-        computerID: 'computerPoints',
-        gamerID: 'gamerPoints',
-    },
-    levelsBlock: {
-        parentContainer: fieldContainer,
-        levelsStyleClass: 'levels',
-        btnEasyId: "easy",
-        btnNormalId: 'normal',
-        btnHardId: 'hard',
-    }
-
-};
 const LevelsValues = {
     easyLevel: {
         rows: 10,
@@ -61,16 +27,24 @@ const LevelsValues = {
     },
 }
 
+const constructor = {
+    gameContainerClass: 'game-container',
+    tableClass: 'table',
+    btnStartID: 'btnStart',
+    btnRestartID: 'btnRestart',
+    pointsDisplayBlockClass: 'points-display',
+    pointsDisplayTextClass: 'points-display-text',
+    levelsBlockClass: 'levels',
+    levelsBlockTextClass: 'levels-text',
+    btnNormalLevelID: 'btnNormal',
+    btnEasyLevelID: 'btnEasy',
+    btnHardLevelID: 'btnHard',
+    pointsDisplayBlockClass: 'points-display',
+    pointsDisplayTextClass: 'points-display-text',
+    computerID: 'computerPoints',
+    gamerID: 'gamerPoints',
 
-// btnEasyLevel.addEventListener('click', () => {
-//     levelSelection(generalParams);
-// })
+};
 
-// btnNormalLevel.addEventListener('click', () => {
-//     levelSelection(generalParams);
-// });
-
-// btnHardLevel.addEventListener('click', () => {
-//     levelSelection(generalParams);
-// })
-// console.log(Number(computerPoints.textContent))
+const table = new Table(fieldContainer, constructor, LevelsValues);
+table.createFullGame();
